@@ -103,3 +103,28 @@
 	for(var/mob/rider as anything in buckled_mobs)
 		rider.bullet_act(P)
 	return TRUE
+
+/obj/vehicle/ridden/secway/witch
+	name = "witch broom"
+	desc = "A brave dust broom gave its life to help you look like an awesome witch."
+	icon_state = "witchbroom"
+	key_type = /obj/item/key/witch
+
+/obj/vehicle/ridden/secway/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/secway/witch)
+
+/obj/item/witch_broom_beacon
+	name = "witch broom beacon"
+	desc = "Calls in your 'magical' witch broom from the heavens above."
+	icon = 'icons/obj/machines/floor.dmi'
+	icon_state = "floor_beacon"
+
+/obj/item/witch_broom_beacon/attack_self()
+	loc.visible_message(span_warning("\The [src] begins to beep loudly!"))
+	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 1 SECONDS)
+
+/obj/item/witch_broom_beacon/proc/launch_payload()
+	playsound(src, SFX_SPARKS, 80, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	new /obj/vehicle/ridden/secway/witch(drop_location())
+	qdel(src)

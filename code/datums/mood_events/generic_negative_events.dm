@@ -195,6 +195,11 @@
 	mood_change = -4
 	timeout = 4 MINUTES
 
+/datum/mood_event/witchspooked
+	description = "OH GOD NOT THE SECURITY WITCH!!!"
+	mood_change = -4
+	timeout = 30 SECONDS
+
 /datum/mood_event/loud_gong
 	description = "That loud gong noise really hurt my ears!"
 	mood_change = -3

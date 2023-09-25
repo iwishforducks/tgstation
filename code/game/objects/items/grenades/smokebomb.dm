@@ -13,6 +13,10 @@
 	///It's extremely important to keep this list up to date. It helps to generate the insightful description of the smokebomb
 	var/static/list/bruh_moment = list("Dank", "Hip", "Lit", "Based", "Robust", "Bruh", "Gamer")
 
+/obj/item/grenade/smokebomb/hex
+	name = "hex of Obscurity"
+	desc = "A hex used by Security Witches to make a quick escape from thieving assistants."
+
 ///Here we generate the extremely insightful description.
 /obj/item/grenade/smokebomb/Initialize(mapload)
 	. = ..()

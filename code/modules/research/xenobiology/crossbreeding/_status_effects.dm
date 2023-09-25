@@ -225,6 +225,20 @@
 	desc = "You feel a shiver down your spine after hearing the haunting noise of bone rattling. You'll move slower and get frostbite for a while!"
 	icon_state = "bloodchill"
 
+/datum/status_effect/witchspooked
+	id = "Witch spooked"
+	duration = 80
+	alert_type = /atom/movable/screen/alert/status_effect/witchspooked
+
+/datum/status_effect/witchspooked/tick(seconds_between_ticks)
+	if(prob(50))
+		owner.set_jitter_if_lower(6 SECONDS)
+
+/atom/movable/screen/alert/status_effect/witchspooked
+	name = "Spooked!"
+	desc = "OH GOD IT'S THE SECURITY WITCH"
+	icon_state = "bloodchill"
+
 /datum/status_effect/rebreathing
 	id = "rebreathing"
 	duration = -1

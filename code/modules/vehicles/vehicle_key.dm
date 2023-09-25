@@ -13,6 +13,10 @@
 	desc = "A keyring with a small steel key, and a rubber stun baton accessory."
 	icon_state = "keysec"
 
+/obj/item/key/witch
+	desc = "A small grey key that goes to a broom."
+	icon_state = "keywitch"
+
 /obj/item/key/security/suicide_act(mob/living/carbon/user)
 	if(!user.emote("spin")) //In the off chance that someone attempts this suicide while under the effects of mime's bane they deserve the silliness.
 		user.visible_message(span_suicide("[user] is putting \the [src] in [user.p_their()] ear and starts [user.p_their()] motor! It looks like [user.p_theyre()] trying to commit suicide... But [user.p_they()] sputters and stalls out! "))

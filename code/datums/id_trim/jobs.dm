@@ -1188,5 +1188,46 @@
 	if(CONFIG_GET(flag/security_has_maint_access))
 		access |= list(ACCESS_MAINT_TUNNELS)
 
+/datum/id_trim/job/security_witch
+	assignment = "Security Witch"
+	intern_alt_name = "Security Witch-in-Training"
+	trim_state = "trim_securityofficer"
+	department_color = COLOR_COMMAND_BLUE
+	subdepartment_color = COLOR_SECURITY_RED
+	department_state = "departmenthead"
+	sechud_icon_state = SECHUD_SECURITY_WITCH
+	extra_access = list(ACCESS_TELEPORTER)
+	extra_wildcard_access = list()
+	minimal_access = list(
+		ACCESS_BRIG,
+		ACCESS_BRIG_ENTRANCE,
+		ACCESS_COURT,
+		ACCESS_MECH_SECURITY,
+		ACCESS_MINERAL_STOREROOM,
+		ACCESS_SECURITY,
+		ACCESS_WEAPONS,
+		)
+	extra_access = list(
+		ACCESS_DETECTIVE,
+		ACCESS_MAINT_TUNNELS,
+		ACCESS_MORGUE,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_HOS,
+		)
+	job = /datum/job/security_witch
+
+/datum/id_trim/job/security_witch/refresh_trim_access()
+	. = ..()
+
+	if(!.)
+		return
+
+	// Config check for if sec has maint access.
+	if(CONFIG_GET(flag/security_has_maint_access))
+		access |= list(ACCESS_MAINT_TUNNELS)
+
 #undef POPULATION_SCALED_ACCESS
 #undef ALWAYS_GETS_ACCESS

@@ -679,3 +679,71 @@
 
 	beakers += beaker_one
 	beakers += beaker_two
+
+/obj/item/grenade/chem_grenade/hex/fireball
+	name = "hex of Fireball"
+	desc = "A hex used by Security Witches used to destroy conniving assistants."
+	stage = GRENADE_READY
+
+/obj/item/grenade/chem_grenade/hex/fireball/Initialize(mapload)
+	. = ..()
+	var/obj/item/reagent_containers/cup/beaker/beaker_one = new(src)
+	var/obj/item/reagent_containers/cup/beaker/beaker_two = new(src)
+
+	beaker_one.reagents.add_reagent(/datum/reagent/water, 35)
+	beaker_two.reagents.add_reagent(/datum/reagent/potassium, 35)
+
+	beakers += beaker_one
+	beakers += beaker_two
+
+/obj/item/grenade/chem_grenade/hex/slow
+	name = "hex of Slow"
+	desc = "A hex used by Security Witches used to slow down the horde of assistants."
+	stage = GRENADE_READY
+
+/obj/item/grenade/chem_grenade/hex/slow/Initialize(mapload)
+	. = ..()
+	var/obj/item/reagent_containers/cup/beaker/beaker_one = new(src)
+	var/obj/item/reagent_containers/cup/beaker/beaker_two = new(src)
+
+	beaker_one.reagents.add_reagent(/datum/reagent/water, 50)
+	beaker_two.reagents.add_reagent(/datum/reagent/water, 50)
+
+	beakers += beaker_one
+	beakers += beaker_two
+
+/obj/item/grenade/chem_grenade/hex/yarn
+	name = "hex of Yarn"
+	desc = "A hex used by Security Witches used to punish assistants for their sins."
+	stage = GRENADE_READY
+
+/obj/item/grenade/chem_grenade/hex/yarn/Initialize(mapload)
+	. = ..()
+	var/obj/item/reagent_containers/cup/beaker/beaker_one = new(src)
+	var/obj/item/reagent_containers/cup/beaker/beaker_two = new(src)
+
+	beaker_one.reagents.add_reagent(/datum/reagent/fluorosurfactant, 35)
+	beaker_one.reagents.add_reagent(/datum/reagent/mutationtoxin/felinid, 15)
+	beaker_two.reagents.add_reagent(/datum/reagent/water, 35)
+	beaker_two.reagents.add_reagent(/datum/reagent/mutationtoxin/felinid, 15)
+
+	beakers += beaker_one
+	beakers += beaker_two
+
+/obj/item/grenade/chem_grenade/hex/grease
+	name = "hex of Grease"
+	desc = "A hex used by Security Witches used to deny access to an area to assistants."
+	stage = GRENADE_READY
+
+/obj/item/grenade/chem_grenade/hex/grease/Initialize(mapload)
+	. = ..()
+	var/obj/item/reagent_containers/cup/beaker/beaker_one = new(src)
+	var/obj/item/reagent_containers/cup/beaker/beaker_two = new(src)
+
+	beaker_one.reagents.add_reagent(/datum/reagent/fluorosurfactant, 35)
+	beaker_one.reagents.add_reagent(/datum/reagent/lube, 15)
+	beaker_two.reagents.add_reagent(/datum/reagent/water, 35)
+	beaker_two.reagents.add_reagent(/datum/reagent/lube, 15)
+
+	beakers += beaker_one
+	beakers += beaker_two
